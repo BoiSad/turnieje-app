@@ -1,0 +1,613 @@
+/* Definiowanie zmiennych kolorów */
+:root {
+    --primary-color: #6297cc;
+    --secondary-color: #0857b7;
+    --light-color: #ebe1e1;
+    --white-color
+    : #fff;
+    --gray-dark: #333;
+    --gray-light: #1d58aa;
+    --info-bg: #cbcfda;
+    --news-bg: #cbcfda;
+    --testimonials-bg: #cbcfda;
+}
+
+/* Globalne style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--gray-dark);
+    line-height: 1.6;
+    background-color: var(--white-color);
+}
+
+/* Styl dla nawigacji */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative; /* Umożliwia dodanie efektów pozycjonowania */
+}
+
+nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s; /* Płynna zmiana kolorów i animacje */
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: var(--secondary-color); /* Kolor tła po najechaniu */
+    color: var(--white-color); /* Kolor tekstu po najechaniu */
+    transform: scale(1.2); /* Powiększenie efektu */
+}
+
+/* Efekt podświetlenia pod elementem */
+nav ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transform: scaleX(0); /* Początkowy stan (niewidoczny) */
+    transition: transform 0.3s ease; /* Płynna animacja */
+    border-radius: 2px; /* Zaokrąglenie rogów */
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus::after {
+    transform: scaleX(4); /* Efekt podświetlenia */
+}
+/* Nagłówek */
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.s;
+}
+
+header:hover {
+    background-color: var(--secondary-color);
+}
+
+header .logo {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background: url('../images/logo.png') no-repeat center center;
+    background-size: contain;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.6s, background-color 2s;
+}
+
+header nav ul li a:hover {
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* Główna sekcja */
+main {
+    padding: 2rem;
+}
+
+/* Formularze */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+form:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--gray-light);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+form button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+    transform: scale(0);
+    border-radius: 50%;
+}
+
+form button:hover::before {
+    transform: scale(1);
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Sekcje */
+section {
+    margin: 2rem 0;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: var(--gray-dark);
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+section h2:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Sekcja informacje */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--info-bg);
+    color: var(--gray-dark);
+}
+
+.informacje {
+    background: var(--white-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.informacje:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.informacje h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.informacje:hover h3 {
+    color: var(--secondary-color);
+}
+
+.informacje p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.informacje b {
+    color: var(--secondary-color);
+}
+
+/* Stylizacja dla tabletów i większych ekranów */
+@media (min-width: 576px) {
+    .info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .informacje {
+        flex: 1;
+        min-width: 300px;
+    }
+}
+
+@media (min-width: 768px) {
+    .informacje {
+        padding: 30px;
+    }
+
+    .informacje h3 {
+        font-size: 1.75rem;
+    }
+
+    .informacje p {
+        font-size: 1.125rem;
+    }
+}
+
+/* Stopka */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+footer:hover {
+    background-color: var(--secondary-color);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Stylizacja dla responsywności */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    form {
+        padding: 1rem;
+    }
+}
+
+/* Kafelki */
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.tile {
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tile h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.tile p {
+    margin-bottom: 0;
+    color: var(--gray-dark);
+}
+
+/* Sekcja wiadomości */
+.news {
+    padding: 2rem;
+    background-color: var(--news-bg);
+}
+
+.news-item {
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.news-item p {
+    margin-bottom: 0;
+    color: var(--gray-dark);
+}
+
+/* Sekcja referencji */
+.testimonials {
+    padding: 2rem;
+    background-color: var(--testimonials-bg);
+}
+
+.testimonial {
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    margin: 0;
+    font-style: italic;
+    color: var(--gray-dark);
+}
+
+.testimonial cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Sekcja FAQ */
+.faq {
+    padding: 2rem;
+    background-color: var(--news-bg);
+}
+
+.faq-item {
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Formularz */
+#team-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#team-inputs label {
+    display: block;
+    margin-top: 1rem;
+}
+
+#team-inputs input {
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: calc(50% - 1rem);
+}
+
+button {
+    padding: 0.75rem 1.25rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 1rem 0;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.invisible {
+    display: none;
+}
+
+#visscalendario {
+    margin-top: 20px;
+}
+/* Styl dla elementów nawigacyjnych */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+#response-message {
+    margin-top: 10px; /* Odstęp między przyciskiem a komunikatem */
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Ogólne style dla kalendarza meczów */
+#schedule-display {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#schedule-display table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+#schedule-display th,
+#schedule-display td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#schedule-display th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+#schedule-display tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#schedule-display tr:hover {
+    background-color: #e2e2e2;
+}
+
+#schedule-display td {
+    font-size: 16px;
+}
+
+#schedule-display h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Styl dla przycisków */
+#generate-schedule {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+#generate-schedule:hover {
+    background-color: #45a049;
+}
+
+#generate-schedule:focus {
+    outline: none;
+}
+
+/* Styl dla formularzy */
+#schedule-form {
+    margin: 20px 0;
+}
+
+#schedule-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+#schedule-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#schedule-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#schedule-form button:hover {
+    background-color: #45a049;
+}
+
+#schedule-form button:focus {
+    outline: none;
+}

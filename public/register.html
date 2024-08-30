@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamUp - Rejestracja</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="register.html">Rejestracja</a></li>
+                <li><a href="login.html">Logowanie</a></li>
+                <li><a href="create_tournament.html">Stwórz Turniej</a></li>
+                <li><a href="publish_results.html">Publikacja Wyników</a></li>
+                <li><a href="customize_settings.html">Personalizacja</a></li>
+            </ul>
+        </nav>
+        <div id="user-info" class="user-info"></div>
+    </header>
+    <main>
+        <h1>Rejestracja</h1>
+        <form id="register-form">
+            <label for="username">Nazwa użytkownika:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Potwierdź hasło:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <label for="email">Adres email:</label>
+            <input type="email" id="email" name="email" required>
+            
+    
+
+            <button type="submit">Zarejestruj się</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> TeamUp. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

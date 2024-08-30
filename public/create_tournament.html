@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tworzenie Turnieju</title>
+    <link rel="stylesheet" href="css/style.css">
+  
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="register.html">Rejestracja</a></li>
+                <li><a href="login.html">Logowanie</a></li>
+                <li><a href="create_tournament.html">Stwórz Turniej</a></li>
+                <li><a href="publish_results.html">Publikacja Wyników</a></li>
+                <li><a href="customize_settings.html">Personalizacja</a></li>
+            </ul>
+        </nav>
+        <div id="user-info" class="user-info"></div>
+    </header>
+    <main>
+        <h1>Stwórz Turniej</h1>
+        <form id="tournament-form">
+            <label for="tournament-name">Nazwa turnieju:</label>
+            <input type="text" id="tournament-name" name="name" required>
+
+            <label for="tournament-date">Data turnieju:</label>
+            <input type="date" id="tournament-date" name="date" required>
+
+            <label for="tournament-lokalizacja">Lokalizacja:</label>
+            <input type="text" id="tournament-lokalizacja" name="lokalizacja" required>
+
+            <label for="tournament-format">Format turnieju:</label>
+            <input type="text" id="tournament-format" name="format" required>
+
+            <button type="submit">Stwórz Turniej</button>
+            <div id="response-message" class="response-message"></div>
+        </form>
+        
+        <h2>Utwórz kalendarz drużyn</h2>
+        <form id="schedule-form">
+            <label for="team-count">Wybierz liczbę drużyn:</label>
+            <select id="team-count" name="team-count">
+                <option value="4">4 drużyny</option>
+                <option value="6">6 drużyn</option>
+                <option value="8">8 drużyn</option>
+                <option value="10">10 drużyn</option>
+                <option value="12">12 drużyn</option>
+                <option value="14">14 drużyn</option>
+                <option value="16">16 drużyn</option>
+                <option value="18">18 drużyn</option>
+                <option value="20">20 drużyn</option>
+            </select>
+            <button type="button" id="generate-team-names">Wygeneruj pola drużyn</button>
+        </form>
+        
+        <form id="team-names-form" style="display: none;">
+            <div id="team-names-container"></div>
+            <button type="button" id="generate-schedule">Wygeneruj kalendarz i dodaj drużyny</button>
+            <div id="message" style="display: none;"></div>
+        </form>
+     
+        <section id="schedule-display">
+            <!-- Tutaj zostanie wyświetlony kalendarz meczów -->
+        </section>
+        
+        <h2>Dodaj Mecz</h2>
+        <form id="match-form">
+            <label for="tournament">Turniej:</label>
+            <select id="tournament" name="tournament">
+                <!-- Opcje turniejów zostaną tutaj załadowane dynamicznie -->
+            </select>
+          
+            <label for="match-team1">Drużyna 1:</label>
+            <select id="match-team1" name="team1_id" required>
+                <!-- Opcje drużyn zostaną tutaj załadowane dynamicznie -->
+            </select>
+        
+            <label for="match-team2">Drużyna 2:</label>
+            <select id="match-team2" name="team2_id" required>
+                <!-- Opcje drużyn zostaną tutaj załadowane dynamicznie -->
+            </select>
+        
+            <label for="match-date">Data meczu:</label>
+            <input type="date" id="match-date" name="match_date" required>
+        
+            <button type="submit">Dodaj mecz</button>
+            <p id="match-response-message"></p>
+        </form>
+        
+
+        
+        
+
+        
+
+        <footer>
+            <p>&copy; <span id="year"></span> TeamUp. Wszelkie prawa zastrzeżone.</p>
+        </footer>
+    </main>
+  
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamUp - Personalizacja</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <script src="https://unpkg.com/i18next@latest/i18next.min.js"></script>
+    <script src="js/i18n-config.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="register.html">Rejestracja</a></li>
+                <li><a href="login.html">Logowanie</a></li>
+                <li><a href="create_tournament.html">Stwórz Turniej</a></li>
+                <li><a href="publish_results.html">Publikacja Wyników</a></li>
+                <li><a href="customize_settings.html">Personalizacja</a></li>
+            </ul>
+        </nav>
+        <div id="user-info" class="user-info"></div>
+    </header>
+    <main>
+        <h1 data-i18n="customize.title">Personalizacja</h1>
+        <form id="customize-form">
+            <label for="theme" data-i18n="customize.theme">Motyw:</label>
+            <select id="theme" name="theme">
+                <option value="default">Domyślny</option>
+                <option value="dark">Ciemny</option>
+                <option value="light">Jasny</option>
+            </select>
+
+            <label for="language" data-i18n="customize.language">Język:</label>
+            <select id="language" name="language">
+                <option value="pl">Polski</option>
+                <option value="en">Angielski</option>
+             
+            </select>
+
+            <button type="submit" data-i18n="customize.save">Zapisz zmiany</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> TeamUp. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

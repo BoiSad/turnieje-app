@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publikacja Wyników</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/publish_results.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="register.html">Rejestracja</a></li>
+                <li><a href="login.html">Logowanie</a></li>
+                <li><a href="create_tournament.html">Stwórz Turniej</a></li>
+                <li><a href="publish_results.html">Publikacja Wyników</a></li>
+                <li><a href="customize_settings.html">Personalizacja</a></li>
+            </ul>
+        </nav>
+        <div id="user-info" class="user-info"></div>
+    </header>
+    <main>
+        <h1>Publikacja Wyników</h1>
+        <form id="publish-results-form">
+            <label for="tournament">Wybierz turniej:</label>
+            <select id="tournament" name="tournament" required> 
+                <!-- Opcje będą załadowane dynamicznie -->
+            </select>
+
+            <label for="match">Wybierz mecz:</label>
+            <select id="match" name="match" required>
+                <!-- Opcje będą załadowane dynamicznie -->
+            </select>
+
+            <label for="result">Wynik:</label>
+            <input type="text" id="result" name="result" required>
+
+            <button type="submit">Opublikuj Wynik</button>
+            <div id="response-message" style="display: none;"></div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> TeamUp. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
